@@ -1,0 +1,28 @@
+<!--
+  Generated template for the MorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>more</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item (click)="gotoSettingProfile()">
+          <ion-icon name="ios-construct-outline" item-start></ion-icon>
+          Account
+        </ion-item>
+        <ion-item (click)="onLogOut()">
+            <ion-icon name="ios-lock-outline" item-start></ion-icon>
+            Log Out
+          </ion-item>
+      </ion-list>
+
+</ion-content>
