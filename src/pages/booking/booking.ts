@@ -36,5 +36,5 @@ export class BookingPage {
   gotoPickup(){
     this.navCtrl.push(AddressPickupPage);
   }
-
+  
 }

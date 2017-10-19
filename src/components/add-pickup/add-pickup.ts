@@ -22,4 +22,5 @@ export class AddPickupComponent {
   gotoBooking() {
     this.navCtrl.push(BookingPage);
   }
+  
 }
