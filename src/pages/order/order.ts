@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddressPickupPage } from "../address-pickup/address-pickup";
 
 /**
  * Generated class for the OrderPage page.
@@ -19,6 +20,9 @@ export class OrderPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPage');
+  }
+  gotoAddresspickup(){
+    this.navCtrl.push(AddressPickupPage);
   }
 
 }

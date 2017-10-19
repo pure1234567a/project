@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddressPickupServiceProvider } from "./address-pickup.service";
 import { AddressPickupModel } from "./address-pickup.model";
+
 /**
  * Generated class for the AddressPickupPage page.
  *
