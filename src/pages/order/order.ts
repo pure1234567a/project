@@ -14,7 +14,7 @@ import { AddressPickupPage } from "../address-pickup/address-pickup";
   templateUrl: 'order.html',
 })
 export class OrderPage {
-
+  address= false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

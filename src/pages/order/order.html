@@ -14,24 +14,68 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>MyAddress</ion-label>
-    <ion-select [(ngModel)]="MyAddress">
-      <ion-option value="l">Lamunpan</ion-option>
-      <ion-option value="p">Pinkhome</ion-option>
-    </ion-select>
-  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label>MyAddress</ion-label>
+      <ion-select [(ngModel)]="MyAddress">
+        <ion-option value="l">Lamunpan</ion-option>
+        <ion-option value="p">Pinkhome</ion-option>
+      </ion-select>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Rates</ion-label>
-    <ion-select [(ngModel)]="rates">
-      <ion-option value="l">Lamunpan</ion-option>
-      <ion-option value="t">Thaipost</ion-option>
-    </ion-select>
-  </ion-item>
+    <ion-item padding *ngIf="MyAddress == 'l'">
+      <ion-label floating>ที่อยู่ผู้ส่ง</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
-  <button ion-button block color="secondary" (click)="gotoAddresspickup()">Address</button>
+    <ion-item>
+      <ion-label>Rates</ion-label>
+      <ion-select [(ngModel)]="rates">
+        <ion-option value="l">Lamunpan</ion-option>
+        <ion-option value="t">Thaipost</ion-option>
+      </ion-select>
+    </ion-item>
 
+    <div *ngIf="rates == 'l'">
+      <ion-item>
+        <ion-label floating>ราคา</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>น้ำหนัก</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ขนาด</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    </div>
+
+    <div *ngIf="rates == 't'">
+      <ion-item>
+        <ion-label floating>ราคา</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>น้ำหนัก</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ขนาด</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    </div>
+
+    <button *ngIf="!address" ion-button block color="secondary" (click)="gotoAddresspickup();address=true">Address</button>
+    <ion-item padding  *ngIf="address">
+      <ion-label floating>ที่อยู่ผู้รับ</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
