@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RatesModel } from "./rates.model";
 import { RatesServiceProvider } from "./rates.service";
+import { CreateRatesPage } from "../create-rates/create-rates";
 /**
  * Generated class for the RatesPage page.
  *
@@ -32,5 +33,8 @@ export class RatesPage {
       console.error(err);
     });
 
+  }
+  gotoCreaterates(){
+    this.navCtrl.push(CreateRatesPage);
   }
 }

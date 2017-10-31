@@ -14,6 +14,7 @@ import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { TabnavPage } from "../pages/tabnav/tabnav";
 import { HomePage } from "../pages/home/home";
+import { LoginPage } from "../pages/login/login";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make WalkthroughPage the root (or first) page
-  rootPage: any =TabnavPage;
+  rootPage: any =LoginPage;
   // rootPage: any = FunctionalitiesPage;
   // rootPage: any = TabsNavigationPage;
   textDir: string = "ltr";
