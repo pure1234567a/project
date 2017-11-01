@@ -76,6 +76,7 @@ import { AddressPickupPage } from "../pages/address-pickup/address-pickup";
 import { OrderPage } from "../pages/order/order";
 import { CreateRatesPage } from "../pages/create-rates/create-rates";
 import { LoginPage } from "../pages/login/login";
+import { AuthenServiceProvider } from '../pages/login/authen.service';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -167,7 +168,8 @@ export function createTranslateLoader(http: Http) {
     RatesServiceProvider,
     BookingServiceProvider,
     SettingprofileServiceProvider,
-    AddressPickupServiceProvider
+    AddressPickupServiceProvider,
+    AuthenServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

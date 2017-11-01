@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, App } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { BookingPage } from '../booking/booking';
 import { RatesPage } from '../rates/rates';
 import { StatusPage } from '../status/status';
 import { MorePage } from '../more/more';
+import { AuthenServiceProvider } from '../login/authen.service';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the TabnavPage tabs.
@@ -26,6 +28,15 @@ export class TabnavPage {
   moreRoot = MorePage
 
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public authorizeProvider: AuthenServiceProvider, public app: App) {
+    let user = JSON.parse(window.localStorage.getItem('user'));
+    if (!user) {
+      setTimeout(() => {
+        // this.app.getActiveNav().push(LoginPage);
+        this.navCtrl.setRoot(LoginPage);
+        return;
+      }, 300);
+    }
+  }
 
 }

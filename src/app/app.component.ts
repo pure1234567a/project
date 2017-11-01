@@ -25,13 +25,13 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make WalkthroughPage the root (or first) page
-  rootPage: any =LoginPage;
+  rootPage: any = TabnavPage;
   // rootPage: any = FunctionalitiesPage;
   // rootPage: any = TabsNavigationPage;
   textDir: string = "ltr";
 
-  pages: Array<{title: any, icon: string, component: any}>;
-  pushPages: Array<{title: any, icon: string, component: any}>;
+  pages: Array<{ title: any, icon: string, component: any }>;
+  pushPages: Array<{ title: any, icon: string, component: any }>;
 
   constructor(
     platform: Platform,
@@ -52,20 +52,17 @@ export class MyApp {
       this.statusBar.styleDefault();
     });
 
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
-      {
-        if(event.lang == 'ar')
-        {
-          platform.setDir('rtl', true);
-          platform.setDir('ltr', false);
-        }
-        else
-        {
-          platform.setDir('ltr', true);
-          platform.setDir('rtl', false);
-        }
-        
-      });
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      if (event.lang == 'ar') {
+        platform.setDir('rtl', true);
+        platform.setDir('ltr', false);
+      }
+      else {
+        platform.setDir('ltr', true);
+        platform.setDir('rtl', false);
+      }
+
+    });
 
   }
 
