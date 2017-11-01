@@ -14,56 +14,60 @@
 
 
 <ion-content>
-    <home-detail [items]="home.items" (click)="gotoTabs()"></home-detail>
-    <ion-row>
-      <ion-col>
-        <label><b>Current Booking</b></label>
+  <home-detail [items]="home.items" (click)="gotoTabs()"></home-detail>
+  <ion-row>
+    <ion-col>
+      <label>
+        <b>Current Booking</b>
+      </label>
+    </ion-col>
+    <ion-col text-right>
+      See All
+    </ion-col>
+  </ion-row>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-row class="marginT">
+        <ion-col>
+          <p>Booked on </p>
+          <label>{{home.currentbooking.date}}, {{home.currentbooking.time}}</label>
+        </ion-col>
+        <ion-col text-right>
+          <p>STAFF CODE</p>
+          <h1 class="font-bold">{{home.currentbooking.staffcode}}</h1>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-icon name="pin"></ion-icon>
+          <span class="description">{{home.currentbooking.pickupaddress}}</span>
+        </ion-col>
+        <ion-col text-right>
+          <ion-icon name="pin"></ion-icon>
+          <span class="description">{{home.currentbooking.deliveryaddress}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+        <ion-col *ngFor="let item of home.currentbooking.items" width-50>
+          <ion-icon name="cube"></ion-icon>
+          <span class="description">{{item.name}} </span>
+          <span class="description">{{item.qty}} items</span>
+        </ion-col>
       </ion-col>
-      <ion-col text-right>
-        See All
-      </ion-col>
-    </ion-row>
-  
-  
-    <ion-list>
-      <ion-item>
-        <ion-row class="marginT">
-          <ion-col>
-            <p>Booked on </p>
-            <label>{{home.currentbooking.date}}, {{home.currentbooking.time}}</label>
-          </ion-col>
-          <ion-col text-right>
-            <p>STAFF CODE</p>
-            <h1 class="font-bold">{{home.currentbooking.staffcode}}</h1>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row>
-          <ion-col>
-            <ion-icon name="pin"></ion-icon>
-            <span class="description">{{home.currentbooking.pickupaddress}}</span>
-          </ion-col>
-          <ion-col text-right>
-            <ion-icon name="pin"></ion-icon>
-            <span class="description">{{home.currentbooking.deliveryaddress}}</span>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row>
-          <ion-col *ngFor="let item of home.currentbooking.items" width-50>
-            <ion-icon name="cube"></ion-icon>
-            <span class="description">{{item.name}} </span>
-            <span class="description">{{item.qty}} items</span>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-  
-  <ion-footer>
-    <ion-toolbar>
-      <button ion-button block color="secondary" (click)="gotoOrder()">
-                  BOOK NOW
-                </button>
-    </ion-toolbar>
-  </ion-footer>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block color="secondary" (click)="gotoOrder()">
+      BOOK NOW
+    </button>
+  </ion-toolbar>
+</ion-footer>
