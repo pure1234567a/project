@@ -1,7 +1,7 @@
 <!-- Generated template for the SlideTabsComponent component -->
 <div class="slide-tabs">
   <ion-toolbar no-border class="scrollable-segments">
-    <ion-segment id="scrollable" [(ngModel)]="tabs">
+    <ion-segment id="scrollable" [(ngModel)]="tabs" mode="md">
       <ion-segment-button value="0" (click)="selectTab(0)">
         Waiting
       </ion-segment-button>
@@ -19,14 +19,14 @@
   <ion-slides #tabsSlider (ionSlideWillChange)="changeWillSlide($event)">
 
     <ion-slide>
-      <ion-content padding>
-        <ion-list>
+      <ion-content>
+        <ion-list *ngFor="let item of items.waiting">
           <ion-item>
             <ion-thumbnail item-start>
-              <h2>เลขที่สินค้า</h2>
-              <h2>ขนาด</h2>
-              <h2>น้ำหนัก</h2>
-              <h2>ผู้รับ</h2>
+              <p>เลขที่สินค้า {{item._id}}</p>
+              <p>ราคารวม {{item.amount}} บาท</p>
+              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>              
             </ion-thumbnail>
           </ion-item>
         </ion-list>
@@ -34,14 +34,14 @@
     </ion-slide>
 
     <ion-slide>
-      <ion-content padding>
-        <ion-list>
+      <ion-content>
+        <ion-list *ngFor="let item of items.accept">
           <ion-item>
             <ion-thumbnail item-start>
-              <h2>เลขที่สินค้า</h2>
-              <h2>ขนาด</h2>
-              <h2>น้ำหนัก</h2>
-              <h2>ผู้รับ</h2>
+              <p>เลขที่สินค้า {{item._id}}</p>
+              <p>ราคารวม {{item.amount}} บาท</p>
+              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>              
             </ion-thumbnail>
           </ion-item>
         </ion-list>
@@ -49,14 +49,14 @@
     </ion-slide>
 
     <ion-slide>
-      <ion-content padding>
-        <ion-list>
+      <ion-content>
+        <ion-list *ngFor="let item of items.sorting">
           <ion-item>
             <ion-thumbnail item-start>
-              <h2>เลขที่สินค้า</h2>
-              <h2>ขนาด</h2>
-              <h2>น้ำหนัก</h2>
-              <h2>ผู้รับ</h2>
+              <p>เลขที่สินค้า {{item._id}}</p>
+              <p>ราคารวม {{item.amount}} บาท</p>
+              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>              
             </ion-thumbnail>
           </ion-item>
         </ion-list>
@@ -64,14 +64,14 @@
     </ion-slide>
     <ion-slide>
 
-      <ion-content padding>
-        <ion-list>
+      <ion-content>
+        <ion-list *ngFor="let item of items.receive">
           <ion-item>
             <ion-thumbnail item-start>
-              <h2>เลขที่สินค้า</h2>
-              <h2>ขนาด</h2>
-              <h2>น้ำหนัก</h2>
-              <h2>ผู้รับ</h2>
+              <p>เลขที่สินค้า {{item._id}}</p>
+              <p>ราคารวม {{item.amount}} บาท</p>
+              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>              
             </ion-thumbnail>
           </ion-item>
         </ion-list>
