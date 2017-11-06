@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrderModel } from "./status.model";
 import { StatusServiceProvider } from "./status.service";
+import { OrderDetailPage } from '../order-detail/order-detail';
 
 /**
  * Generated class for the StatusPage page.
@@ -31,5 +32,7 @@ export class StatusPage {
       console.error(error);
     });
   }
-
+  selected(item){
+    this.navCtrl.push(OrderDetailPage,item);
+  }
 }

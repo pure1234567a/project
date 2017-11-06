@@ -83,6 +83,7 @@ import { AddressDetailComponent } from '../components/address-detail/address-det
 import { OrderServiceProvider } from '../pages/order/order.service';
 import { StatusServiceProvider } from '../pages/status/status.service';
 import { OrerDetailComponent } from '../components/orer-detail/orer-detail';
+import { OrderDetailPage } from "../pages/order-detail/order-detail";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -121,6 +122,7 @@ export function createTranslateLoader(http: Http) {
     AddPickupComponent,
     AddressDetailComponent,
     OrerDetailComponent,
+    OrderDetailPage
     
 
   ],
@@ -153,7 +155,8 @@ export function createTranslateLoader(http: Http) {
     OrderPage,
     CreateRatesPage,
     LoginPage,
-    AddressPage
+    AddressPage,
+    OrderDetailPage
   ],
   providers: [
     // GoogleMapsService,

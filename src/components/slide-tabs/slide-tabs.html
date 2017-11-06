@@ -20,7 +20,7 @@
 
     <ion-slide>
       <ion-content>
-        <ion-list *ngFor="let item of items.waiting">
+        <ion-list *ngFor="let item of items.waiting" (click)="clickItem(item)">
           <ion-item>
             <ion-thumbnail item-start>
               <p>เลขที่สินค้า {{item._id}}</p>
