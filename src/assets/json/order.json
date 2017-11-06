@@ -72,7 +72,7 @@
                 "_id": "59f698f9f6d06d800b153052",
                 "displayName": "admin test"
             },
-            "amount": 199,
+            "amount": 290,
             "receiver": {
                 "_id": "59f82e6eaeb38b8434bca852",
                 "user": "59f698f9f6d06d800b153052",
@@ -138,7 +138,7 @@
                 "_id": "59f698f9f6d06d800b153052",
                 "displayName": "admin test"
             },
-            "amount": 199,
+            "amount": 300,
             "receiver": {
                 "_id": "59f82e6eaeb38b8434bca852",
                 "user": "59f698f9f6d06d800b153052",
@@ -204,7 +204,7 @@
                 "_id": "59f698f9f6d06d800b153052",
                 "displayName": "admin test"
             },
-            "amount": 199,
+            "amount": 1399,
             "receiver": {
                 "_id": "59f82e6eaeb38b8434bca852",
                 "user": "59f698f9f6d06d800b153052",
