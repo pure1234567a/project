@@ -80,6 +80,9 @@ import { AddressPage } from "../pages/address/address";
 import { AuthenServiceProvider } from '../pages/login/authen.service';
 import { AddressServiceProvider } from '../pages/address/address.service'
 import { AddressDetailComponent } from '../components/address-detail/address-detail';
+import { OrderServiceProvider } from '../pages/order/order.service';
+import { StatusServiceProvider } from '../pages/status/status.service';
+import { OrerDetailComponent } from '../components/orer-detail/orer-detail';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -117,6 +120,7 @@ export function createTranslateLoader(http: Http) {
     HomeDetailComponent,
     AddPickupComponent,
     AddressDetailComponent,
+    OrerDetailComponent,
     
 
   ],
@@ -177,6 +181,8 @@ export function createTranslateLoader(http: Http) {
     AddressPickupServiceProvider,
     AuthenServiceProvider,
     AddressServiceProvider,
+    OrderServiceProvider,
+    StatusServiceProvider,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

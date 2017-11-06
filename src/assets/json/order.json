@@ -1,25 +1,266 @@
 {
-    "orderNo": "001",
-    "item": {
-        "name": "Box0",
-        "size": "0-35 cm",
-        "price": "35 ฿"
-    },
-    "sender": {
-        "address": "33/1 หมู่ 4",
-        "subdistrict": "ทุ่งคลี",
-        "district": "เดิมบางนางบวช",
-        "province": "สุพรรณบุรี",
-        "postcode": "72120",
-        "nameshop": "pinkyshop",
-        "tel": "091-714-0838"
-    },
-    "receiver": {
-        "address": "65/1 หมู่ 5",
-        "subdistrict": "ลุมพลี",
-        "district": "พระนครศรีอยุธยา",
-        "province": "พระนครศรีอยุธยา",
-        "postcode": "13000",
-        "tel": "091-714-0902"
-    }
+    "waiting": [
+        {
+            "_id": "59f82f07aeb38b8434bca855",
+            "user": {
+                "_id": "59f698f9f6d06d800b153052",
+                "displayName": "admin test"
+            },
+            "amount": 199,
+            "receiver": {
+                "_id": "59f82e6eaeb38b8434bca852",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "receiver",
+                "created": "2017-10-31T08:03:58.207Z",
+                "tel": "0917140902",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "phailing",
+                "address": "19/7-8 m.2",
+                "surname": "khanthawiti",
+                "name": "thamakon"
+            },
+            "sender": {
+                "_id": "59f6a9018238878431213a66",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "sender",
+                "created": "2017-10-30T04:22:25.490Z",
+                "tel": "0917140838",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "lumpee",
+                "address": "99/13 m.5",
+                "surname": "oumpradit",
+                "name": "suklutai"
+            },
+            "items": [
+                {
+                    "item": {
+                        "_id": "59f6f33e7ed748281da08d8e",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 82,
+                        "created": "2017-10-30T09:39:10.234Z",
+                        "rates": "thaipost",
+                        "size": "xl"
+                    },
+                    "qty": 2,
+                    "total": 164,
+                    "_id": "59f82f07aeb38b8434bca857"
+                },
+                {
+                    "item": {
+                        "_id": "59f6b6d5716bd1f815eec83a",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 35,
+                        "rates": "lamunphan",
+                        "size": "s"
+                    },
+                    "qty": 1,
+                    "total": 35,
+                    "_id": "59f82f07aeb38b8434bca856"
+                }
+            ],
+            "status": "waiting"
+        }
+    ],
+    "accept": [
+        {
+            "_id": "59f82f07aeb38b8434bca855",
+            "user": {
+                "_id": "59f698f9f6d06d800b153052",
+                "displayName": "admin test"
+            },
+            "amount": 199,
+            "receiver": {
+                "_id": "59f82e6eaeb38b8434bca852",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "receiver",
+                "created": "2017-10-31T08:03:58.207Z",
+                "tel": "0917140902",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "phailing",
+                "address": "19/7-8 m.2",
+                "surname": "khanthawiti",
+                "name": "thamakon"
+            },
+            "sender": {
+                "_id": "59f6a9018238878431213a66",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "sender",
+                "created": "2017-10-30T04:22:25.490Z",
+                "tel": "0917140838",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "lumpee",
+                "address": "99/13 m.5",
+                "surname": "oumpradit",
+                "name": "suklutai"
+            },
+            "items": [
+                {
+                    "item": {
+                        "_id": "59f6f33e7ed748281da08d8e",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 82,
+                        "created": "2017-10-30T09:39:10.234Z",
+                        "rates": "thaipost",
+                        "size": "xl"
+                    },
+                    "qty": 2,
+                    "total": 164,
+                    "_id": "59f82f07aeb38b8434bca857"
+                },
+                {
+                    "item": {
+                        "_id": "59f6b6d5716bd1f815eec83a",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 35,
+                        "rates": "lamunphan",
+                        "size": "s"
+                    },
+                    "qty": 1,
+                    "total": 35,
+                    "_id": "59f82f07aeb38b8434bca856"
+                }
+            ],
+            "status": "accept"
+        }
+    ],
+    "sorting": [
+        {
+            "_id": "59f82f07aeb38b8434bca855",
+            "user": {
+                "_id": "59f698f9f6d06d800b153052",
+                "displayName": "admin test"
+            },
+            "amount": 199,
+            "receiver": {
+                "_id": "59f82e6eaeb38b8434bca852",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "receiver",
+                "created": "2017-10-31T08:03:58.207Z",
+                "tel": "0917140902",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "phailing",
+                "address": "19/7-8 m.2",
+                "surname": "khanthawiti",
+                "name": "thamakon"
+            },
+            "sender": {
+                "_id": "59f6a9018238878431213a66",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "sender",
+                "created": "2017-10-30T04:22:25.490Z",
+                "tel": "0917140838",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "lumpee",
+                "address": "99/13 m.5",
+                "surname": "oumpradit",
+                "name": "suklutai"
+            },
+            "items": [
+                {
+                    "item": {
+                        "_id": "59f6f33e7ed748281da08d8e",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 82,
+                        "created": "2017-10-30T09:39:10.234Z",
+                        "rates": "thaipost",
+                        "size": "xl"
+                    },
+                    "qty": 2,
+                    "total": 164,
+                    "_id": "59f82f07aeb38b8434bca857"
+                },
+                {
+                    "item": {
+                        "_id": "59f6b6d5716bd1f815eec83a",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 35,
+                        "rates": "lamunphan",
+                        "size": "s"
+                    },
+                    "qty": 1,
+                    "total": 35,
+                    "_id": "59f82f07aeb38b8434bca856"
+                }
+            ],
+            "status": "sorting"
+        }
+    ],
+    "receive": [
+        {
+            "_id": "59f82f07aeb38b8434bca855",
+            "user": {
+                "_id": "59f698f9f6d06d800b153052",
+                "displayName": "admin test"
+            },
+            "amount": 199,
+            "receiver": {
+                "_id": "59f82e6eaeb38b8434bca852",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "receiver",
+                "created": "2017-10-31T08:03:58.207Z",
+                "tel": "0917140902",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "phailing",
+                "address": "19/7-8 m.2",
+                "surname": "khanthawiti",
+                "name": "thamakon"
+            },
+            "sender": {
+                "_id": "59f6a9018238878431213a66",
+                "user": "59f698f9f6d06d800b153052",
+                "sort": "sender",
+                "created": "2017-10-30T04:22:25.490Z",
+                "tel": "0917140838",
+                "postcode": "13000",
+                "province": "ayutthaya",
+                "district": "ayutthaya",
+                "subdistrict": "lumpee",
+                "address": "99/13 m.5",
+                "surname": "oumpradit",
+                "name": "suklutai"
+            },
+            "items": [
+                {
+                    "item": {
+                        "_id": "59f6f33e7ed748281da08d8e",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 82,
+                        "created": "2017-10-30T09:39:10.234Z",
+                        "rates": "thaipost",
+                        "size": "xl"
+                    },
+                    "qty": 2,
+                    "total": 164,
+                    "_id": "59f82f07aeb38b8434bca857"
+                },
+                {
+                    "item": {
+                        "_id": "59f6b6d5716bd1f815eec83a",
+                        "user": "59f698f9f6d06d800b153052",
+                        "price": 35,
+                        "rates": "lamunphan",
+                        "size": "s"
+                    },
+                    "qty": 1,
+                    "total": 35,
+                    "_id": "59f82f07aeb38b8434bca856"
+                }
+            ],
+            "status": "receive"
+        }
+    ]
 }

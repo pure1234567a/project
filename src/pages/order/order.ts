@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddressPickupPage } from "../address-pickup/address-pickup";
+import { OrderModel } from "./order.model";
+import { OrderServiceProvider } from "./order.service";
 
 /**
  * Generated class for the OrderPage page.
@@ -14,14 +16,25 @@ import { AddressPickupPage } from "../address-pickup/address-pickup";
   templateUrl: 'order.html',
 })
 export class OrderPage {
-  address= false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  order: OrderModel = new OrderModel
+  address = false;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public orderServiceProvider: OrderServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPage');
+    this.getOrderData();
   }
-  gotoAddresspickup(){
+  getOrderData() {
+    this.orderServiceProvider.getOrder().then((data) => {
+      this.order = data;
+      console.log(data);
+    }, (error) => {
+      console.error(error);
+    });
+  }
+
+  gotoAddresspickup() {
     this.navCtrl.push(AddressPickupPage);
   }
 
