@@ -16,6 +16,8 @@ import { CreateRatesPage } from "../create-rates/create-rates";
 })
 export class RatesPage {
   cost:string;
+  listLamunphan :any = [];
+  listThaipost :any = [];
   rates: RatesModel = new RatesModel();
   constructor(public navCtrl: NavController, public navParams: NavParams, public ratesServiceProvider: RatesServiceProvider) {
   }
@@ -27,7 +29,18 @@ export class RatesPage {
   }
   getRatesData() {
     this.ratesServiceProvider.getRates().then((data) => {
-      this.rates = data;
+      // this.rates = data;
+      data.forEach(type => {
+        if (type.rates === 'lamunphan') {
+          this.listLamunphan.push(type)
+        } else {
+          this.listThaipost.push(type)
+        }
+      });
+      this.rates = {
+        lamunphan: this.listLamunphan,
+        thaipost: this.listThaipost
+      }
       console.log(data);
     }, (err) => {
       console.error(err);

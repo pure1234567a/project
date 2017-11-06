@@ -16,6 +16,7 @@ import { AddressPickupPage } from '../address-pickup/address-pickup';
   templateUrl: 'booking.html',
 })
 export class BookingPage {
+  listSender: any = [];
   booking: BookingModel = new BookingModel
   constructor(public navCtrl: NavController, public navParams: NavParams, public bookingServiceProvider: BookingServiceProvider) {
   }
@@ -26,15 +27,20 @@ export class BookingPage {
   }
   getBookingData() {
     this.bookingServiceProvider.getBooking().then((data) => {
-      this.booking = data;
-      console.log(data);
+      // this.booking = data;
+      data.forEach(address => {
+        if (address.sort === 'sender') {
+          this.listSender.push(address)
+        }
+      });
+      this.booking.items = this.listSender;
     }, (err) => {
       console.error(err);
     });
 
   }
-  gotoPickup(){
+  gotoPickup() {
     this.navCtrl.push(AddressPickupPage);
   }
-  
+
 }

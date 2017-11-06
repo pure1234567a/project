@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>more</ion-title>
+    <ion-title>setting</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +15,10 @@
 
 <ion-content padding>
     <ion-list>
+        <ion-item (click)="gotoAddress()">
+            <ion-icon name="ios-home-outline" item-start ></ion-icon>
+            Address
+          </ion-item>
         <ion-item (click)="gotoSettingProfile()">
           <ion-icon name="ios-construct-outline" item-start></ion-icon>
           Account

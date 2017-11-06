@@ -1,0 +1,12 @@
+<!-- Generated template for the AddressDetailComponent component -->
+<ion-list>
+  <div ion-item *ngFor="let itm of items">
+          <p><b>{{itm.name}} {{itm.surname}}</b></p><br>
+          <p>{{itm.address}}
+          {{itm.subdistrict}}
+          {{itm.district}}
+          {{itm.province}}
+          {{itm.postcode}}</p><br>
+          <p>Tel : {{itm.tel}}
+  </div>
+</ion-list>

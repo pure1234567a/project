@@ -1,46 +1,38 @@
 {
     "lamunphan": [
         {
-            "name": "Box0",
-            "size": "0-35 cm",
+            "size": "s",
             "price": "35 ฿"
         },
         {
-            "name": "Box1",
-            "size": "0-35 cm",
-            "price": "35 ฿"
+            "size": "m",
+            "price": "45 ฿"
         },
         {
-            "name": "Box2",
-            "size": "0-35 cm",
-            "price": "35 ฿"
+            "size": "l",
+            "price": "55 ฿"
         },
         {
-            "name": "Box3",
-            "size": "0-35 cm",
-            "price": "35 ฿"
+            "size": "xl",
+            "price": "65 ฿"
         }
     ],
     "thaipost": [
         {
-            "name": "Weight",
-            "size": "0-20",
+            "size": "s",
             "price": "52 ฿"
         },
         {
-            "name": "Weight",
-            "size": "21-100 cm",
-            "price": "52 ฿"
+            "size": "m",
+            "price": "62 ฿"
         },
         {
-            "name": "Weight",
-            "size": "21-100 cm",
-            "price": "52 ฿"
+            "size": "l",
+            "price": "72 ฿"
         },
         {
-            "name": "Weight",
-            "size": "21-100 cm",
-            "price": "52 ฿"
+            "size": "xl",
+            "price": "82 ฿"
         }
     ]
 }

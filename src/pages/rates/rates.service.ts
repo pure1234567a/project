@@ -16,10 +16,10 @@ export class RatesServiceProvider {
   constructor(public http: Http) {
     console.log('Hello RatesServiceProvider Provider');
   }
-  getRates(): Promise<RatesModel> {
-    return this.http.get('./assets/json/rates.json')
+  getRates(): Promise<any> {
+    return this.http.get('http://localhost:3000/api/rates')
       .toPromise()
-      .then(response => response.json() as RatesModel)
+      .then(response => response.json())
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {

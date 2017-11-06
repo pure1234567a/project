@@ -1,5 +1,6 @@
-export class BookingModel {
-    items: Array<Address>;
+export class AddressModel {
+    sender: Array<Address>;
+    receiver: Array<Address>;
 }
 export class Address {
     address: string;
@@ -7,7 +8,6 @@ export class Address {
     district: string;
     province: string;
     postcode: string;
-    tel:string;
-    sort:string;
-
+    tel: string;
+    sort: string;
 }

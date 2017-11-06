@@ -20,19 +20,19 @@
             <ion-input type="subdistrict"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label stacked>Address title</ion-label>
-            <ion-input type="address title"></ion-input>
+            <ion-label stacked>Tel</ion-label>
+            <ion-input type="tel"></ion-input>
         </ion-item>
-  
-        <ion-item>
-            <ion-label stacked>Address detail</ion-label>
-            <ion-input type="address detail"></ion-input>
-        </ion-item>
-  
-        <ion-item>
-            <ion-label stacked>Mobile number</ion-label>
-            <ion-input type="Mobile number"></ion-input>
-        </ion-item>
+        <ion-list>
+            <ion-item>
+              <ion-label>Sort</ion-label>
+              <ion-select [(ngModel)]="sort" multiple="true">
+                <ion-option value="sender" selected="true">sender</ion-option>
+                <ion-option value="receiver">receiver</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        
   </ion-list>
   </ion-content>
   <ion-footer>

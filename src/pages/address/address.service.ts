@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import { BookingModel } from './booking.model';
+import { AddressModel } from "./address.model";
 
 /*
-  Generated class for the BookingServiceProvider provider.
+  Generated class for the AddressServiceProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class BookingServiceProvider {
+export class AddressServiceProvider {
 
   constructor(public http: Http) {
-    console.log('Hello BookingServiceProvider Provider');
+    console.log('Hello AddressServiceProvider Provider');
   }
-  getBooking(): Promise<any> {
+  getAddress(): Promise<any> {
     return this.http.get('http://localhost:3000/api/addresses')
       .toPromise()
       .then(response => response.json())

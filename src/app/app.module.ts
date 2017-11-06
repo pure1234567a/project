@@ -76,7 +76,10 @@ import { AddressPickupPage } from "../pages/address-pickup/address-pickup";
 import { OrderPage } from "../pages/order/order";
 import { CreateRatesPage } from "../pages/create-rates/create-rates";
 import { LoginPage } from "../pages/login/login";
+import { AddressPage } from "../pages/address/address";
 import { AuthenServiceProvider } from '../pages/login/authen.service';
+import { AddressServiceProvider } from '../pages/address/address.service'
+import { AddressDetailComponent } from '../components/address-detail/address-detail';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -107,11 +110,13 @@ export function createTranslateLoader(http: Http) {
     OrderPage,
     CreateRatesPage,
     LoginPage,
+    AddressPage,
     RatesDetailComponent,
     BookingAddressComponent,
     SlideTabsComponent,
     HomeDetailComponent,
     AddPickupComponent,
+    AddressDetailComponent,
     
 
   ],
@@ -143,7 +148,8 @@ export function createTranslateLoader(http: Http) {
     AddressPickupPage,
     OrderPage,
     CreateRatesPage,
-    LoginPage
+    LoginPage,
+    AddressPage
   ],
   providers: [
     // GoogleMapsService,
@@ -169,7 +175,8 @@ export function createTranslateLoader(http: Http) {
     BookingServiceProvider,
     SettingprofileServiceProvider,
     AddressPickupServiceProvider,
-    AuthenServiceProvider
+    AuthenServiceProvider,
+    AddressServiceProvider,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

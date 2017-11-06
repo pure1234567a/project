@@ -4,6 +4,6 @@ export class AddressPickupModel{
     district:string;
     province:string;
     postcode:string;
-    nameshop:string;
-    tel:number;
+    tel:string;
+    sort:string;
 }

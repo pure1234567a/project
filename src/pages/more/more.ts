@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { SettingProfilePage } from "../setting-profile/setting-profile";
 import { WalkthroughPage } from "../walkthrough/walkthrough";
+import { AddressPage } from '../address/address';
 
 /**
  * Generated class for the MorePage page.
@@ -28,6 +29,9 @@ export class MorePage {
   onLogOut() {
     window.localStorage.clear();
     this.app.getRootNav().setRoot(WalkthroughPage);
+  }
+  gotoAddress(){
+    this.navCtrl.push(AddressPage);
   }
 
 }
