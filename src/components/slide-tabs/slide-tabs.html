@@ -40,12 +40,14 @@
       <ion-content>
         <ion-list *ngFor="let item of items.accept" (click)="clickItem(item)">
           <ion-item>
-            <ion-thumbnail item-start>
-              <p>เลขที่สินค้า {{item._id}}</p>
-              <p>ราคารวม {{item.amount}} บาท</p>
-              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
-              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
-            </ion-thumbnail>
+            <div text-right>
+              <label style="font-size: small;">Ord :{{item._id}}</label>
+            </div>
+            <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+            <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
+            <div text-right>
+              <label style="font-size: small;">ราคารวม {{item.amount}} บาท</label>
+            </div>
           </ion-item>
         </ion-list>
       </ion-content>
@@ -55,12 +57,14 @@
       <ion-content>
         <ion-list *ngFor="let item of items.sorting" (click)="clickItem(item)">
           <ion-item>
-            <ion-thumbnail item-start>
-              <p>เลขที่สินค้า {{item._id}}</p>
-              <p>ราคารวม {{item.amount}} บาท</p>
-              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
-              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
-            </ion-thumbnail>
+            <div text-right>
+              <label style="font-size: small;">Ord :{{item._id}}</label>
+            </div>
+            <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+            <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
+            <div text-right>
+              <label style="font-size: small;">ราคารวม {{item.amount}} บาท</label>
+            </div>
           </ion-item>
         </ion-list>
       </ion-content>
@@ -70,12 +74,14 @@
       <ion-content>
         <ion-list *ngFor="let item of items.receive" (click)="clickItem(item)">
           <ion-item>
-            <ion-thumbnail item-start>
-              <p>เลขที่สินค้า {{item._id}}</p>
-              <p>ราคารวม {{item.amount}} บาท</p>
-              <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
-              <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
-            </ion-thumbnail>
+            <div text-right>
+              <label style="font-size: small;">Ord :{{item._id}}</label>
+            </div>
+            <p>ผู้รับ {{item.receiver.name}} {{item.receiver.surname}} ({{item.receiver.tel}})</p>
+            <p>ผู้ส่ง {{item.sender.name}} {{item.sender.surname}} ({{item.sender.tel}})</p>
+            <div text-right>
+              <label style="font-size: small;">ราคารวม {{item.amount}} บาท</label>
+            </div>
           </ion-item>
         </ion-list>
       </ion-content>
