@@ -17,7 +17,7 @@ export class BookingServiceProvider {
     console.log('Hello BookingServiceProvider Provider');
   }
   getBooking(): Promise<any> {
-    return this.http.get('http://localhost:3000/api/addresses')
+    return this.http.get('https://tran-server.herokuapp.com/api/addresses')
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

@@ -17,7 +17,7 @@ export class RatesServiceProvider {
     console.log('Hello RatesServiceProvider Provider');
   }
   getRates(): Promise<any> {
-    return this.http.get('http://localhost:3000/api/rates')
+    return this.http.get('https://tran-server.herokuapp.com/api/rates')
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

@@ -18,7 +18,7 @@ export class AuthenServiceProvider {
     console.log('Hello AuthenServiceProvider Provider');
   }
   signIn(data): Promise<any> {
-    return this.http.post('http://localhost:3000/api/auth/signin/',data)
+    return this.http.post('https://tran-server.herokuapp.com/api/auth/signin/',data)
       .toPromise()
       .then(response => {
         let data = response.json();

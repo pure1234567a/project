@@ -17,7 +17,13 @@ export class StatusServiceProvider {
     console.log('Hello StatusServiceProvider Provider');
   }
   getOrder(): Promise<any> {
-    return this.http.get('http://localhost:3000/api/orders')
+    return this.http.get('https://tran-server.herokuapp.com/api/orders')
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+  updateOrder(id, data): Promise<any> {
+    return this.http.put('https://tran-server.herokuapp.com/api/orders/' + id, data)
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);
@@ -26,6 +32,4 @@ export class StatusServiceProvider {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-
-
 }
