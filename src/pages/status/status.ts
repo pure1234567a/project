@@ -16,8 +16,12 @@ import { OrderDetailPage } from '../order-detail/order-detail';
   templateUrl: 'status.html',
 })
 export class StatusPage {
+  listWaiting: any = [];
+  listAccept: any = [];
+  listSorting: any = [];
+  listReceive: any = [];
   order: OrderModel = new OrderModel
-  constructor(public navCtrl: NavController, public navParams: NavParams, public statusServiceProvider:StatusServiceProvider ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public statusServiceProvider: StatusServiceProvider) {
   }
 
   ionViewDidLoad() {
@@ -26,13 +30,29 @@ export class StatusPage {
   }
   getOrderData() {
     this.statusServiceProvider.getOrder().then((data) => {
-      this.order = data; 
-      console.log(data);
-    },(error) => {
+      data.forEach(status => {
+        if (status.status === 'waiting') {
+          this.listWaiting.push(status)
+        } else if (status.status === 'accept') {
+          this.listAccept.push(status)
+        }else if (status.status === 'sorting') {
+          this.listSorting.push(status)
+        }else if (status.status === 'receive') {
+          this.listReceive.push(status)
+        }
+      });
+      this.order = {
+        waiting: this.listWaiting,
+        accept: this.listAccept,
+        sorting:this.listSorting,
+        receive:this.listReceive      }
+      // this.order = data;
+      // console.log(data);
+    }, (error) => {
       console.error(error);
     });
   }
-  selected(item){
-    this.navCtrl.push(OrderDetailPage,item);
+  selected(item) {
+    this.navCtrl.push(OrderDetailPage, item);
   }
 }

@@ -17,7 +17,7 @@ export class StatusServiceProvider {
     console.log('Hello StatusServiceProvider Provider');
   }
   getOrder(): Promise<any> {
-    return this.http.get('./assets/json/order.json')
+    return this.http.get('http://localhost:3000/api/orders')
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

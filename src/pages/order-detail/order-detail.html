@@ -4,6 +4,18 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<ion-card>
+  <img src="img/nin-live.png" />
+  <ion-card-content>
+    <ion-card-title>
+      Nine Inch Nails Live
+    </ion-card-title>
+    <p>
+      The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+    </p>
+  </ion-card-content>
+</ion-card>
+<!--  -->
 <ion-header>
 
   <ion-navbar>
@@ -13,6 +25,96 @@
 </ion-header>
 
 
-<ion-content padding>
-  {{data._id}}
+<ion-content>
+  <!-- <p>
+    <b>{{data._id}}</b>
+  </p>
+  <br>
+  <p>Amount {{data.amount}}
+    <br> Status {{data.status}}
+    <div *ngFor="let itm of data.items">
+      Size {{itm.item.size}} Price {{itm.item.price}} qty {{itm.qty}} total {{itm.total}}
+    </div>
+    <div>
+      <p>Sender : {{data.sender.name}} {{data.sender.surname}}</p>
+      <p>Address : {{data.sender.address}} {{data.sender.subdistrict}} {{data.sender.district}}</p>
+      <p>{{data.sender.province}} {{data.sender.postcode}} ({{data.sender.tel}})</p>
+    </div>
+    <div>
+      <p>Receiver : {{data.receiver.name}} {{data.receiver.surname}}</p>
+      <p>Address : {{data.receiver.address}} {{data.receiver.subdistrict}} {{data.receiver.district}}</p>
+      <p>{{data.receiver.province}} {{data.receiver.postcode}} ({{data.receiver.tel}})</p>
+    </div> -->
+
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Ord ID : </label>
+        </ion-col>
+        <ion-col>
+          <p>{{data._id}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Amount : </label>
+        </ion-col>
+        <ion-col>
+          <p>{{data.amount}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Status : </label>
+        </ion-col>
+        <ion-col>
+          <p>{{data.status}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Size : </label>
+        </ion-col>
+        <ion-col>
+          <p *ngFor="let itm of data.items">{{itm.item.size}} Price {{itm.item.price}} qty {{itm.qty}} total {{itm.total}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Sender : </label>
+        </ion-col>
+        <ion-col>
+          <p>{{data.sender.name}} {{data.sender.surname}}</p>
+          <p>{{data.sender.address}} {{data.sender.subdistrict}} {{data.sender.district}}</p>
+          <p>{{data.sender.province}} {{data.sender.postcode}} ({{data.sender.tel}})</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>
+          <label>Receiver : </label>
+        </ion-col>
+        <ion-col>
+          <p> {{data.receiver.name}} {{data.receiver.surname}}</p>
+          <p>{{data.receiver.address}} {{data.receiver.subdistrict}} {{data.receiver.district}}</p>
+          <p>{{data.receiver.province}} {{data.receiver.postcode}} ({{data.receiver.tel}})</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <button ion-button block color="dark">{{data.status == 'waiting'?'Accept':data.status == 'accept'?'Sorting':data.status == 'sorting'?'Receive':''}}</button>
+</ion-footer>
