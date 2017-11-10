@@ -1,6 +1,6 @@
 <!-- Generated template for the AddressDetailComponent component -->
 <ion-list>
-  <div ion-item *ngFor="let itm of items">
+  <div ion-item *ngFor="let itm of items" (click)="gotoDetail(itm)">
           <p><b>{{itm.name}} {{itm.surname}}</b></p><br>
           <p>{{itm.address}}
           {{itm.subdistrict}}

@@ -25,10 +25,10 @@
 
   <div [ngSwitch]="sort">
     <div *ngSwitchCase="'sender'">
-      <address-detail [items]="address.sender"></address-detail>
+      <address-detail [items]="address.sender" (itemClicked)="selectAddress($event)"></address-detail>
     </div>
     <div *ngSwitchCase="'receiver'">
-      <address-detail [items]="address.receiver"></address-detail>
+      <address-detail [items]="address.receiver" (itemClicked)="selectAddress($event)"></address-detail>
     </div>
   </div>
 

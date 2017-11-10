@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { BookingPage } from '../../pages/booking/booking';
+import { AddressPickupModel } from "../../pages/address-pickup/address-pickup.model";
 
 /**
  * Generated class for the AddPickupComponent component.
@@ -13,14 +14,14 @@ import { BookingPage } from '../../pages/booking/booking';
 })
 export class AddPickupComponent {
   navCtrl: any;
-  @Input() items: any;
+  address: AddressPickupModel = new AddressPickupModel();
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
     console.log('Hello AddPickupComponent Component');
   }
 
   gotoBooking() {
-    this.navCtrl.push(BookingPage);
+    this.itemClicked.emit(this.address);
   }
   
 }

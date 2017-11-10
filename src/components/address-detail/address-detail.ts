@@ -15,5 +15,7 @@ export class AddressDetailComponent {
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
   }
-
+  gotoDetail(item) {
+    this.itemClicked.emit(item);
+  }
 }

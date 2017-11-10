@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddressPickupPage } from '../address-pickup/address-pickup';
 import { AddressModel } from "./address.model";
 import { AddressServiceProvider } from "./address.service";
+import { AddressDetailPage } from '../address-detail/address-detail';
 
 /**
  * Generated class for the AddressPage page.
@@ -17,8 +18,8 @@ import { AddressServiceProvider } from "./address.service";
 })
 export class AddressPage {
   sort: string;
-  listSender :any = [];
-  listReceiver :any = [];
+  listSender: any = [];
+  listReceiver: any = [];
   address: AddressModel = new AddressModel
   constructor(public navCtrl: NavController, public navParams: NavParams, public addressServiceProvider: AddressServiceProvider) {
   }
@@ -33,9 +34,9 @@ export class AddressPage {
       // this.address = data;
       data.forEach(address => {
         if (address.sort === 'sender') {
-          this.listReceiver.push(address)
-        } else {
           this.listSender.push(address)
+        } else {
+          this.listReceiver.push(address)
         }
       });
       this.address = {
@@ -54,5 +55,7 @@ export class AddressPage {
   gotoPickup() {
     this.navCtrl.push(AddressPickupPage);
   }
-
+  selectAddress(item) {
+    this.navCtrl.push(AddressDetailPage, item)
+  }
 }

@@ -33,5 +33,13 @@ export class AddressPickupPage {
     });
 
   }
+  addAddress(address){
+    this.addressPickupServiceProvider.saveAddress(address).then((data) => {
+      this.navCtrl.pop();
+    }, (err) => {
+      alert(JSON.stringify(err));
+      console.error(err);
+    });
+  }
 
 }

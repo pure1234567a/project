@@ -25,10 +25,10 @@
 
   <div [ngSwitch]="cost">
     <div *ngSwitchCase="'lamunphan'">
-        <rates-detail [items]="rates.lamunphan"></rates-detail>
+        <rates-detail [items]="rates.lamunphan" (itemClicked)="selectRate($event)"></rates-detail>
     </div>
     <div *ngSwitchCase="'thaipost'">
-        <rates-detail [items]="rates.thaipost"></rates-detail>
+        <rates-detail [items]="rates.thaipost" (itemClicked)="selectRate($event)"></rates-detail>
     </div>
 </div>
 <ion-fab right bottom>

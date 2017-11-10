@@ -17,24 +17,24 @@
   <ion-list>
     <ion-item>
       <ion-label>Rates</ion-label>
-      <ion-select [(ngModel)]="rates">
-        <ion-option value="rates">lamunphan</ion-option>
-        <ion-option value="rates">thaipost</ion-option>
+      <ion-select [(ngModel)]="rate.rates">
+        <ion-option value="lamunphan">lamunphan</ion-option>
+        <ion-option value="thaipost">thaipost</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Size</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="rate.size"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Price</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="rate.price"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block color="secondary">
+    <button ion-button block color="secondary" (click)="addRate()">
       Submit
     </button>
   </ion-toolbar>

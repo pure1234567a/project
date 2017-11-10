@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Rates } from "./create-rates.model";
+import { CreateRatesProvider } from "./create-rates.service";
 /**
  * Generated class for the CreateRatesPage page.
  *
@@ -13,12 +14,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'create-rates.html',
 })
 export class CreateRatesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  rate: Rates = new Rates();
+  constructor(public navCtrl: NavController, public navParams: NavParams, public CreateRatesProvider: CreateRatesProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateRatesPage');
   }
-
+  addRate() {
+    this.CreateRatesProvider.saveRate(this.rate).then((data) => {
+      this.navCtrl.pop();
+      console.log(JSON.stringify(data));
+    }, (err) => {
+      console.log(JSON.stringify(err));
+    });
+  }
 }

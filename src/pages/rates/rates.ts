@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RatesModel } from "./rates.model";
 import { RatesServiceProvider } from "./rates.service";
 import { CreateRatesPage } from "../create-rates/create-rates";
+import { RateDetailPage } from '../rate-detail/rate-detail';
 /**
  * Generated class for the RatesPage page.
  *
@@ -49,5 +50,8 @@ export class RatesPage {
   }
   gotoCreaterates(){
     this.navCtrl.push(CreateRatesPage);
+  }
+  selectRate(item){
+    this.navCtrl.push(RateDetailPage,item);
   }
 }

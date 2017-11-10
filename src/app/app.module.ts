@@ -84,6 +84,11 @@ import { OrderServiceProvider } from '../pages/order/order.service';
 import { StatusServiceProvider } from '../pages/status/status.service';
 import { OrerDetailComponent } from '../components/orer-detail/orer-detail';
 import { OrderDetailPage } from "../pages/order-detail/order-detail";
+import { CreateRatesProvider } from '../pages/create-rates/create-rates.service';
+import { RateDetailPage } from "../pages/rate-detail/rate-detail";
+import { RateDetailServiceProvider } from '../pages/rate-detail/rate-detail.service';
+import { AddressDetailPage } from "../pages/address-detail/address-detail";
+import { AddressDetailServiceProvider } from '../pages/address-detail/address-detail.service';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -122,7 +127,9 @@ export function createTranslateLoader(http: Http) {
     AddPickupComponent,
     AddressDetailComponent,
     OrerDetailComponent,
-    OrderDetailPage
+    OrderDetailPage,
+    RateDetailPage,
+    AddressDetailPage
     
 
   ],
@@ -156,7 +163,9 @@ export function createTranslateLoader(http: Http) {
     CreateRatesPage,
     LoginPage,
     AddressPage,
-    OrderDetailPage
+    OrderDetailPage,
+    RateDetailPage,
+    AddressDetailPage
   ],
   providers: [
     // GoogleMapsService,
@@ -186,6 +195,9 @@ export function createTranslateLoader(http: Http) {
     AddressServiceProvider,
     OrderServiceProvider,
     StatusServiceProvider,
+    CreateRatesProvider,
+    RateDetailServiceProvider,
+    AddressDetailServiceProvider,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
