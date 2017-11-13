@@ -20,7 +20,7 @@ export class AddressPage {
   sort: string;
   listSender: any = [];
   listReceiver: any = [];
-  address: AddressModel = new AddressModel
+  address: AddressModel = new AddressModel;
   constructor(public navCtrl: NavController, public navParams: NavParams, public addressServiceProvider: AddressServiceProvider) {
   }
 

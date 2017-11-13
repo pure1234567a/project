@@ -21,6 +21,12 @@ export class CreateRatesProvider {
       .then(response => response.json() as Rates)
       .catch(this.handleError);
   }
+  editRate(id, data): Promise<Rates> {
+    return this.http.put('https://tran-server.herokuapp.com/api/rates/' + id, data)
+      .toPromise()
+      .then(response => response.json() as Rates)
+      .catch(this.handleError);
+  }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

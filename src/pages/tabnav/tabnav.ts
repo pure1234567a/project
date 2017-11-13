@@ -7,6 +7,7 @@ import { StatusPage } from '../status/status';
 import { MorePage } from '../more/more';
 import { AuthenServiceProvider } from '../login/authen.service';
 import { LoginPage } from '../login/login';
+import { AddressPage } from '../address/address';
 
 /**
  * Generated class for the TabnavPage tabs.
@@ -22,7 +23,7 @@ import { LoginPage } from '../login/login';
 export class TabnavPage {
 
   homeRoot = HomePage
-  bookingRoot = BookingPage
+  AddressRoot = AddressPage
   ratesRoot = RatesPage
   statusRoot = StatusPage
   moreRoot = MorePage

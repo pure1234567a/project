@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { AddressDetailServiceProvider } from "./address-detail.service";
+import { AddressPickupPage } from '../address-pickup/address-pickup';
 
 /**
  * Generated class for the AddressDetailPage page.
@@ -15,12 +16,15 @@ import { AddressDetailServiceProvider } from "./address-detail.service";
 })
 export class AddressDetailPage {
   address: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, public modalCtrl: ModalController,public addressDetailServiceProvider:AddressDetailServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public modalCtrl: ModalController, public addressDetailServiceProvider: AddressDetailServiceProvider) {
     this.address = this.navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddressDetailPage');
+  }
+  updateAddress(item) {
+    this.navCtrl.push(AddressPickupPage, item)
   }
   alertDeleteAddress(item) {
     this.presentConfirm(item);

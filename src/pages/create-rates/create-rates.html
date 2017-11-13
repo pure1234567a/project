@@ -17,25 +17,28 @@
   <ion-list>
     <ion-item>
       <ion-label>Rates</ion-label>
-      <ion-select [(ngModel)]="rate.rates">
+      <ion-select [(ngModel)]="rate.rates" value="{{editRate.rates}}">
         <ion-option value="lamunphan">lamunphan</ion-option>
         <ion-option value="thaipost">thaipost</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Size</ion-label>
-      <ion-input type="text" [(ngModel)]="rate.size"></ion-input>
+      <ion-input type="text" value="{{editRate.size}}" [(ngModel)]="rate.size"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Price</ion-label>
-      <ion-input type="number" [(ngModel)]="rate.price"></ion-input>
+      <ion-input type="number" value="{{editRate.price}}" [(ngModel)]="rate.price"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block color="secondary" (click)="addRate()">
-      Submit
+    <button *ngIf="!editRate._id" ion-button block color="secondary" (click)="addRate()">
+      SAVE
+    </button>
+    <button *ngIf="editRate._id" ion-button block color="secondary" (click)="updateRate()">
+      UPDATE
     </button>
   </ion-toolbar>
 </ion-footer>

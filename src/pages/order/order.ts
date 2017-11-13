@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddressPickupPage } from "../address-pickup/address-pickup";
-import { OrderModel } from "./order.model";
+import { Order } from "./order.model";
 import { OrderServiceProvider } from "./order.service";
+import { AddressServiceProvider } from '../address/address.service';
+import { AddressModel } from '../address/address.model';
+import { Address } from '../status/status.model';
+import { StepRatePage } from '../step-rate/step-rate';
 
 /**
  * Generated class for the OrderPage page.
@@ -16,21 +20,47 @@ import { OrderServiceProvider } from "./order.service";
   templateUrl: 'order.html',
 })
 export class OrderPage {
-  order: OrderModel = new OrderModel
+  order: Order = new Order();
   address = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public orderServiceProvider: OrderServiceProvider) {
+  listSender: any = [];
+  listReceiver: any = [];
+  listaddress: AddressModel = new AddressModel();
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public orderServiceProvider: OrderServiceProvider,
+    public addressServiceProvider: AddressServiceProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPage');
-    this.getOrderData();
+    this.getAddress();
   }
-  getOrderData() {
-    this.orderServiceProvider.getOrder().then((data) => {
-      this.order = data;
-      console.log(data);
-    }, (error) => {
-      console.error(error);
+  // getOrderData() {
+  //   this.orderServiceProvider.getOrder().then((data) => {
+  //     this.order = data;
+  //     console.log(data);
+  //   }, (error) => {
+  //     console.error(error);
+  //   });
+  // }
+  getAddress() {
+    this.addressServiceProvider.getAddress().then((data) => {
+      data.forEach(address => {
+        if (address.sort === 'sender') {
+          this.listSender.push(address)
+        } else {
+          this.listReceiver.push(address)
+        }
+      });
+      this.listaddress = {
+        receiver: this.listReceiver,
+        sender: this.listSender
+      }
+      console.log(this.listaddress);
+    }, (err) => {
+      console.log(err);
     });
   }
 
@@ -38,4 +68,15 @@ export class OrderPage {
     this.navCtrl.push(AddressPickupPage);
   }
 
+  selectedSender(data) {
+    console.log(data);
+    this.order.sender = data;
+  }
+  selectedReceiver(data) {
+    console.log(data);
+    this.order.receiver = data;
+  }
+  gotoNextStep() {
+    this.navCtrl.push(StepRatePage,this.order);
+  }
 }

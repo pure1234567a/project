@@ -89,6 +89,8 @@ import { RateDetailPage } from "../pages/rate-detail/rate-detail";
 import { RateDetailServiceProvider } from '../pages/rate-detail/rate-detail.service';
 import { AddressDetailPage } from "../pages/address-detail/address-detail";
 import { AddressDetailServiceProvider } from '../pages/address-detail/address-detail.service';
+import { StepRatePage } from "../pages/step-rate/step-rate";
+import { StepTotalPage } from "../pages/step-total/step-total";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -129,7 +131,9 @@ export function createTranslateLoader(http: Http) {
     OrerDetailComponent,
     OrderDetailPage,
     RateDetailPage,
-    AddressDetailPage
+    AddressDetailPage,
+    StepRatePage,
+    StepTotalPage
     
 
   ],
@@ -165,7 +169,9 @@ export function createTranslateLoader(http: Http) {
     AddressPage,
     OrderDetailPage,
     RateDetailPage,
-    AddressDetailPage
+    AddressDetailPage,
+    StepRatePage,
+    StepTotalPage
   ],
   providers: [
     // GoogleMapsService,

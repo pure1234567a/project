@@ -15,7 +15,9 @@ import { CreateRatesProvider } from "./create-rates.service";
 })
 export class CreateRatesPage {
   rate: Rates = new Rates();
+  editRate: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public CreateRatesProvider: CreateRatesProvider) {
+    this.editRate = this.navParams.data;
   }
 
   ionViewDidLoad() {
@@ -23,6 +25,15 @@ export class CreateRatesPage {
   }
   addRate() {
     this.CreateRatesProvider.saveRate(this.rate).then((data) => {
+      this.navCtrl.pop();
+      console.log(JSON.stringify(data));
+    }, (err) => {
+      console.log(JSON.stringify(err));
+    });
+  }
+
+  updateRate() {
+    this.CreateRatesProvider.editRate(this.rate._id, this.rate).then((data) => {
       this.navCtrl.pop();
       console.log(JSON.stringify(data));
     }, (err) => {

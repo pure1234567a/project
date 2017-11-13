@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import { RateDetailServiceProvider } from "./rate-detail.service";
+import { CreateRatesPage } from '../create-rates/create-rates';
 
 /**
  * Generated class for the RateDetailPage page.
@@ -15,7 +16,7 @@ import { RateDetailServiceProvider } from "./rate-detail.service";
 })
 export class RateDetailPage {
   rate: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, public modalCtrl: ModalController,public rateDetailServiceProvider:RateDetailServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public modalCtrl: ModalController, public rateDetailServiceProvider: RateDetailServiceProvider) {
     this.rate = this.navParams.data;
     console.log(this.rate);
   }
@@ -58,5 +59,8 @@ export class RateDetailPage {
       ]
     });
     alert.present();
+  }
+  updateRate(item) {
+    this.navCtrl.push(CreateRatesPage, item)
   }
 }

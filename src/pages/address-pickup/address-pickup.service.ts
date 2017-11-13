@@ -28,6 +28,12 @@ export class AddressPickupServiceProvider {
       .then(response => response.json() as AddressPickupModel)
       .catch(this.handleError);
   }
+  editAddress(id,data): Promise<AddressPickupModel> {
+    return this.http.put('https://tran-server.herokuapp.com/api/addresses/'+ id, data)
+      .toPromise()
+      .then(response => response.json() as AddressPickupModel)
+      .catch(this.handleError);
+  }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

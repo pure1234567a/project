@@ -1,38 +1,35 @@
 <!-- Generated template for the AddPickupComponent component -->
 <ion-content>
+    <!-- {{getsort()}} -->
     <ion-list>
         <ion-item>
             <ion-label stacked>Name</ion-label>
-            <ion-input type="name" [(ngModel)]="address.name"></ion-input>
+            <ion-input type="name" [(ngModel)]="address.name" value="{{items.name}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Surname</ion-label>
-            <ion-input type="surname" [(ngModel)]="address.surname"></ion-input>
+            <ion-input type="surname" [(ngModel)]="address.surname" value="{{items.surname}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Address</ion-label>
-            <ion-input type="address" [(ngModel)]="address.address"></ion-input>
+            <ion-input type="address" [(ngModel)]="address.address" value="{{items.address}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Subdistrict</ion-label>
-            <ion-input type="subdistrict" [(ngModel)]="address.subdistrict"></ion-input>
+            <ion-input type="subdistrict" [(ngModel)]="address.subdistrict" value="{{items.subdistrict}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>District</ion-label>
-            <ion-input type="district" [(ngModel)]="address.district"></ion-input>
+            <ion-input type="district" [(ngModel)]="address.district" value="{{items.district}}"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Province</ion-label>
-            <ion-input type="province" [(ngModel)]="address.province"></ion-input>
+            <ion-input type="province" [(ngModel)]="address.province" value="{{items.province}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label stacked>Postcode</ion-label>
-            <ion-input type="postcode" [(ngModel)]="address.postcode"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label stacked>Tel</ion-label>
-            <ion-input type="tel" [(ngModel)]="address.tel"></ion-input>
+            <ion-input type="postcode" [(ngModel)]="address.postcode" value="{{items.postcode}}"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Sort</ion-label>
@@ -41,10 +38,16 @@
                 <ion-option value="receiver">receiver</ion-option>
             </ion-select>
         </ion-item>
+        <ion-item>
+            <ion-label stacked>Tel</ion-label>
+            <ion-input type="tel" [(ngModel)]="address.tel" value="{{items.tel}}"></ion-input>
+        </ion-item>
+
     </ion-list>
 </ion-content>
 <ion-footer>
     <ion-toolbar>
-        <button ion-button block color="secondary" (click)="gotoBooking()">SAVE</button>
+        <button *ngIf="!address._id" ion-button block color="secondary" (click)="gotoBooking()">SAVE</button>
+        <button *ngIf="address._id" ion-button block color="secondary" (click)="updateAddress()">UPDATE</button>
     </ion-toolbar>
 </ion-footer>

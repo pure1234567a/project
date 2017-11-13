@@ -16,29 +16,41 @@ import { AddressPickupModel } from "./address-pickup.model";
 })
 export class AddressPickupPage {
   addressPickup: AddressPickupModel = new AddressPickupModel();
-
+  address: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public addressPickupServiceProvider: AddressPickupServiceProvider) {
-    this.getAddressPickupData();
+    this.address = this.navParams.data;
+    console.log(this.address);
+    window.localStorage.setItem('sort', JSON.stringify(this.address));
+    // this.getAddressPickupData();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddressPickupPage');
   }
-  getAddressPickupData() {
-    this.addressPickupServiceProvider.getAddressPickup().then((data) => {
-      this.addressPickup = data;
-      console.log(data);
-    }, (err) => {
-      console.error(err);
-    });
+  // getAddressPickupData() {
+  //   this.addressPickupServiceProvider.getAddressPickup().then((data) => {
+  //     this.addressPickup = data;
+  //     console.log(data);
+  //   }, (err) => {
+  //     console.error(err);
+  //   });
 
-  }
-  addAddress(address){
+  // }
+
+  addAddress(address) {
     this.addressPickupServiceProvider.saveAddress(address).then((data) => {
       this.navCtrl.pop();
     }, (err) => {
       alert(JSON.stringify(err));
       console.error(err);
+    });
+  }
+  
+  updateAddress(address) {
+    this.addressPickupServiceProvider.editAddress(address._id, address).then((data) => {
+      this.navCtrl.pop();
+    }, (err) => {
+      console.log(err);
     });
   }
 

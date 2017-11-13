@@ -13,22 +13,29 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-item>
-      <ion-label>MyAddress</ion-label>
-      <ion-select [(ngModel)]="MyAddress">
-        <ion-option value="l">Lamunpan</ion-option>
-        <ion-option value="p">Pinkhome</ion-option>
+      <ion-label>Sender</ion-label>
+      <ion-select [(ngModel)]="sender" (ngModelChange)="selectedSender($event)">
+        <ion-option *ngFor="let itm of listaddress.sender" [value]="itm">{{itm.name}} {{itm.surname}}</ion-option>
       </ion-select>
     </ion-item>
-
-    <ion-item padding *ngIf="MyAddress == 'l'">
+    <ion-item padding *ngIf="sender">
       <ion-label floating>ที่อยู่ผู้ส่ง</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-textarea value="{{sender.address + ' ' + sender.subdistrict + ' ' + sender.district+ ' ' + sender.province+ ' ' + sender.postcode}}"></ion-textarea>
     </ion-item>
-
     <ion-item>
+      <ion-label>Receiver</ion-label>
+      <ion-select [(ngModel)]="receiver" (ngModelChange)="selectedReceiver($event)">
+        <ion-option *ngFor="let itm of listaddress.receiver" [value]="itm">{{itm.name}} {{itm.surname}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item padding *ngIf="receiver">
+      <ion-label floating>ที่อยู่ผู้รับ</ion-label>
+      <ion-textarea value="{{receiver.address + ' ' + receiver.subdistrict + ' ' + receiver.district+ ' ' + receiver.province+ ' ' + receiver.postcode}}"></ion-textarea>
+    </ion-item>
+    <!-- <ion-item>
       <ion-label>Rates</ion-label>
       <ion-select [(ngModel)]="rates">
         <ion-option value="l">Lamunpan</ion-option>
@@ -68,19 +75,16 @@
         <ion-label floating>ขนาด</ion-label>
         <ion-input type="number"></ion-input>
       </ion-item>
-    </div>
-
-    <button *ngIf="!address" ion-button block color="secondary" (click)="gotoAddresspickup();address=true">Address</button>
-    <ion-item padding  *ngIf="address">
-      <ion-label floating>ที่อยู่ผู้รับ</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+    </div> -->
   </ion-list>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block color="secondary">
-      Submit
+    <button ion-button block color="secondary" *ngIf="!sender || !receiver" disabled>
+      Next
+    </button>
+    <button ion-button block color="secondary" (click)="gotoNextStep()" *ngIf="sender && receiver">
+      Next
     </button>
   </ion-toolbar>
 </ion-footer>
