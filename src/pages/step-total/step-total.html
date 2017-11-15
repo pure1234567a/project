@@ -9,12 +9,55 @@
   <ion-navbar>
     <ion-title>step-total</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content>
-
+  <ion-card>
+    <ion-card-header text-center>
+      Order
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <p>Receiver</p>
+        <p>{{order.receiver.name}} {{order.receiver.surname}}</p>
+        <p>{{order.receiver.address}} {{order.receiver.subdistrict}} {{order.receiver.district}} {{order.receiver.province}}
+          {{order.receiver.postcode}}
+        </p>
+      </div>
+      <br>
+      <div text-right>
+        <p>Sender</p>
+        <p>{{order.sender.name}} {{order.sender.surname}}</p>
+        <p>{{order.sender.address}} {{order.sender.subdistrict}} {{order.sender.district}} {{order.sender.province}} {{order.sender.postcode}}</p>
+      </div>
+      <hr>
+      <div>
+        <p>Items</p>
+        <div>
+          <ion-row *ngFor="let itm of order.items">
+            <ion-col>
+              <p>{{itm.item.rates}}</p>
+            </ion-col>
+            <ion-col text-center>
+              <p>{{itm.item.size}}</p>
+            </ion-col>
+            <ion-col text-center>
+              <p>{{itm.qty}}</p>
+            </ion-col>
+            <ion-col text-center>
+              <p>{{itm.item.price}}</p>
+            </ion-col>
+            <ion-col text-center>
+              <p>{{itm.total}}</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+      <br>
+      <div text-right>
+        <p>Amount : {{amount}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

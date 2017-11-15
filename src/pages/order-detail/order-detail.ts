@@ -15,8 +15,10 @@ import { StatusServiceProvider } from "../status/status.service";
 })
 export class OrderDetailPage {
   data: any;
+  status: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public statusServiceProvider: StatusServiceProvider) {
     this.data = this.navParams.data;
+    this.status = this.data.status;
     console.log(this.data);
   }
 
@@ -27,13 +29,20 @@ export class OrderDetailPage {
     if (data.status === 'waiting') {
       data.status = "accept";
       this.updateStatus(data);
+    }else if(data.status === 'accept'){
+      data.status = "sorting";
+      this.updateStatus(data);
+    }else if(data.status === 'sorting'){
+      data.status = "receive";
+      this.updateStatus(data);
     }
   }
   updateStatus(data) {
     this.statusServiceProvider.updateOrder(data._id, data).then((res) => {
+      this.navCtrl.pop();
       console.log(res);
     }, (err) => {
-      console.log(err);
+      alert(JSON.stringify(err));
     });
   }
 }

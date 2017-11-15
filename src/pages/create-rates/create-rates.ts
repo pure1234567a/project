@@ -33,9 +33,9 @@ export class CreateRatesPage {
   }
 
   updateRate() {
-    this.CreateRatesProvider.editRate(this.rate._id, this.rate).then((data) => {
-      this.navCtrl.pop();
+    this.CreateRatesProvider.editRate(this.editRate._id, this.rate).then((data) => {
       console.log(JSON.stringify(data));
+      this.navCtrl.pop();      
     }, (err) => {
       console.log(JSON.stringify(err));
     });

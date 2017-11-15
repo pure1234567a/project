@@ -17,10 +17,11 @@
   <ion-list>
     <ion-item>
       <ion-label>Rates</ion-label>
-      <ion-select [(ngModel)]="rate.rates" value="{{editRate.rates}}">
+      <!-- <ion-select [(ngModel)]="rate.rates" value="{{editRate.rates}}">
         <ion-option value="lamunphan">lamunphan</ion-option>
         <ion-option value="thaipost">thaipost</ion-option>
-      </ion-select>
+      </ion-select> -->
+      <ion-input type="text" value="{{editRate.rates}}" [(ngModel)]="rate.rates"></ion-input>      
     </ion-item>
     <ion-item>
       <ion-label>Size</ion-label>

@@ -19,19 +19,9 @@ export class AddPickupComponent {
   address: AddressPickupModel = new AddressPickupModel();
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
-    // console.log(this.items);
-    // this.getsort();
+    console.log(this.items);
     console.log('Hello AddPickupComponent Component');
   }
-
-  // getsort() {
-  //   setTimeout(function() {
-  //     this.address = window.localStorage.getItem('sort') ? JSON.parse(window.localStorage.getItem('sort')) : '';
-  //     console.log(this.address);
-  //     return this.address;
-  //   }, 1000);
-
-  // }
   updateAddress() {
     this.updateClicked.emit(this.address);
   }

@@ -14,6 +14,64 @@
 
 
 <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Rates</ion-label>
+      <ion-select [(ngModel)]="rate" (ngModelChange)="selectedRate($event)">
+        <ion-option value="lamunpan">Lamunpan</ion-option>
+        <ion-option value="thaipost">Thaipost</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="rate && rate == 'lamunpan'">
+      <ion-label>Size</ion-label>
+      <ion-select [(ngModel)]="size" (ngModelChange)="selectedSize($event)">
+        <ion-option *ngFor="let itm of listLamunphan" [value]="itm">{{itm.size}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="rate && rate == 'thaipost'">
+      <ion-label>Size</ion-label>
+      <ion-select [(ngModel)]="size" (ngModelChange)="selectedSize($event)">
+        <ion-option *ngFor="let itm of listThaipost" [value]="itm">{{itm.size}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="size">
+      <ion-label>Qty.</ion-label>
+      <ion-input type="number" [(ngModel)]="qty" (ngModelChange)="addQty($event)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="size">
+      <ion-label>Price</ion-label>
+      <ion-input type="number" [(ngModel)]="price"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="size">
+      <ion-label>Total</ion-label>
+      <ion-input type="number" [(ngModel)]="total"></ion-input>
+    </ion-item>
+    <button ion-button block outline color="primary" (click)="addItem()">
+      Add Item
+    </button>
+  </ion-list>
+  <ion-card *ngIf="items.length > 0">
+    <ion-row text-center>
+      <ion-label>Items</ion-label>
+    </ion-row>
+    <ion-row *ngFor="let itm of items">
+      <ion-col>
+        {{itm.item.rates}}
+      </ion-col>
+      <ion-col text-center>
+        {{itm.item.size}}
+      </ion-col>
+      <ion-col text-center>
+        {{itm.qty}}
+      </ion-col>
+      <ion-col text-center>
+        {{itm.item.price}}
+      </ion-col>
+      <ion-col text-center>
+        {{itm.total}}
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

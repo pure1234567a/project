@@ -16,7 +16,7 @@ import { AddressPickupModel } from "./address-pickup.model";
 })
 export class AddressPickupPage {
   addressPickup: AddressPickupModel = new AddressPickupModel();
-  address: any;
+  address: AddressPickupModel = new AddressPickupModel();
   constructor(public navCtrl: NavController, public navParams: NavParams, public addressPickupServiceProvider: AddressPickupServiceProvider) {
     this.address = this.navParams.data;
     console.log(this.address);
@@ -47,7 +47,7 @@ export class AddressPickupPage {
   }
   
   updateAddress(address) {
-    this.addressPickupServiceProvider.editAddress(address._id, address).then((data) => {
+    this.addressPickupServiceProvider.editAddress(this.address._id, address).then((data) => {
       this.navCtrl.pop();
     }, (err) => {
       console.log(err);
